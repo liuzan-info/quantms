@@ -28,7 +28,7 @@ def parse_args(args=None):
 def make_dir(path):
     if len(path) > 0:
         try:
-            os.makedirs(path)
+            os.makedirs(path, mode=777)
         except OSError as exception:
             if exception.errno != errno.EEXIST:
                 raise exception
